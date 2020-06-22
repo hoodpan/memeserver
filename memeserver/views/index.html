@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title><%= title %></title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, users-scalable=no" name="viewport">
+<head>
+    <link type="text/css" rel="stylesheet" href="stylesheets/DB.css">
+</head>
+<body>
+<div class="mysql_row">
+    <ul class="table mn1" id="memetable">
+        <li>
+            <ul class="thead">
+                <li>#id</li>
+                <li>memename</li>
+                <li>memetag</li>
+                <li>memetext</li>
+                <li>memeimgurl</li>
+                <li>operation</li>
+            </ul>
+        </li>
+        <li>
+        <ul class="tabrow" data-id="meme.id">
+            <li><%= meme.id %></li>
+            <li><%= meme.memename %></li>
+            <li><%= meme.memetag %></li>
+            <li><%= meme.memetext %></li>
+            <li><%= meme.memeimgurl %></li>
+            <li>
+                <a class="update" href="#">修改 | &nbsp;|&nbsp;<a class="delete" href="#">删除</a></a>
+            </li>
+        </ul>
+        </li>
+    </ul>
+</div>
+<div class="mysql_row">
+    <ul class="table mn1" id="usermemetable">
+        <li>
+            <ul class="thead">
+                <li>#id</li>
+                <li>memename</li>
+                <li>memetag</li>
+                <li>memetext</li>
+                <li>memeimgurl</li>
+                <li>operation</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="tabrow" data-id="meme.id">
+                <li><%= usermeme.id %></li>
+                <li><%= usermeme.memename %></li>
+                <li><%= usermeme.memetag %></li>
+                <li><%= usermeme.memetext %></li>
+                <li><%= usermeme.memeimgurl %></li>
+                <li>
+                    <a class="update" href="#">修改 | &nbsp;|&nbsp;<a class="delete" href="#">删除</a></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="mysql_row">
+    <span class="nw1">词条名：</span>
+    <input type="text" value="请输入词条名" id="memename"/>
+    <br>
+    <br>
+    <span class="nw1">词条标签：</span>
+    <input type="text" value="请输入词条标签" id="memetag"/>
+    <br>
+    <br>
+    <span class="nw1">词条释义：</span>
+    <input type="text" value="请输入词条释义" id="memetext"/>
+    <br>
+    <br>
+    <span class="nw1">词条图片路径：</span>
+    <input type="text" value="" id="memeimgurl"/>
+</div>
+<div class="mysql_row">
+    <button class="ele_none" id="update">修改 | &nbsp;|&nbsp;<button id="add">添加</button></button>
+</div>
+</body>
+<script type="text/javascript" src="lib/jQuery-2.1.4.min.js"></script>
+<script type="text/javascript" src="javascripts/DB.js"></script>
+</html>
