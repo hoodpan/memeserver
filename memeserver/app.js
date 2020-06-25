@@ -21,8 +21,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('html',ejs.__express)
-app.set('view engine', 'html');
+app.set('view engine', 'jade');
 
 //载入中间件
 app.use(logger('dev'));
@@ -37,7 +36,8 @@ app.all('*', function (req, res, next){
   res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
   res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
   res.header("Access-Control-Allow-Credentials", true);
-  res.header("Content-Type", "application/json;charset=utf-8");
+  //res.header("Content-Type", "application/json;charset=utf-8");
+  res.header("Content-Type", "text/html;charset=utf-8");
   res.header("X-Powered-By", '4.16.4');
   next();
 });

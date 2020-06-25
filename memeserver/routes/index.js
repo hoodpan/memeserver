@@ -21,13 +21,27 @@ module.exports = function (app) {
     conn_user.getMemes(function (data) {
       if (data.status) {
         data.title = "增删改查";
-        res.type('html');
+        res.header("Content-Type", "text/html;charset=utf-8");
         res.render('index', data);
+
       } else {
         res.render('error', {message: "信息加载失败"});
       }
     });
   });
+
+  app.get('/user', function (req, res) {
+        conn_user.getUserMemes(function (data) {
+            if (data.status) {
+                data.title = "审核";
+                res.header("Content-Type", "text/html;charset=utf-8");
+                res.render('user', data);
+
+            } else {
+                res.render('error', {message: "信息加载失败"});
+            }
+        });
+    });
 
   //接口功能
   //搜索

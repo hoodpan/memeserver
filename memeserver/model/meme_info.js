@@ -13,5 +13,9 @@ module.exports = {
     },
     addMemes: function (data, callback) {
         mysqlDB.insertTable(data, callback);
+    },
+    getUserMemes: function (callback) {
+        sql = "select * from user_meme";
+        mysqlDB.getTableAllInfo({sql: sql}, callback);
     }
 };
